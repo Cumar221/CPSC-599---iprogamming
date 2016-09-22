@@ -66,7 +66,28 @@ let newArray = primeNumbers.map({"\($0)"})
 //: Create an enum of `TimeUnit` with appropriate values Second, Minute, Hour, Day and Week.
 //: Add a method for converting between them, so that one could call:  `TimeUnit.Day.convertTo(TimeUnit.Hour) == 24.0`.
 //: _(6 points)_
-enum TimeUnit{
-    case Second, Minute, Hour, Day, Week
-}
+
+    enum TimeUnit : Double{
+        case Second = 1, Minute = 60, Hour = 3600, Day = 86400, Week = 604800
+
+        func convertTo(timeUnit: TimeUnit) -> Double{
+            var myTime = 0.0
+                switch timeUnit {
+                case .Second:
+                    myTime = (self.rawValue/Second.rawValue)
+                case .Minute:
+                    myTime = (self.rawValue/Minute.rawValue)
+                case .Hour:
+                    myTime = (self.rawValue/Hour.rawValue)
+                case .Day:
+                    myTime = (self.rawValue/Day.rawValue)
+                case .Week:
+                    myTime = (self.rawValue/Week.rawValue)
+            }
+            return myTime
+        }
+    }
+    
+    print(TimeUnit.Day.convertTo(TimeUnit.Hour) == 24.0)
+
 //: [To page 3 of 3 ...](@next)
