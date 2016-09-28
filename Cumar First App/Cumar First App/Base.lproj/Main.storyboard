@@ -38,6 +38,9 @@
                                         <exclude reference="pZJ-Tb-eKh"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="nameTxt:" destination="BYZ-38-t0r" eventType="editingChanged" id="9Zl-7G-zsM"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toJ-Sl-ajj">
                                 <rect key="frame" x="27" y="213" width="50" height="30"/>
@@ -78,6 +81,9 @@
                                         <exclude reference="1l0-R2-wef"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="changeBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UQv-lE-KyJ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numbers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="774-cU-Kpu">
                                 <rect key="frame" x="1" y="251" width="76" height="35"/>
@@ -113,11 +119,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="0eU-wU-QYF">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="0eU-wU-QYF">
                                 <rect key="frame" x="128" y="394" width="118" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="114" id="sMo-Ga-sBM"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="sliderFunc:" destination="BYZ-38-t0r" eventType="valueChanged" id="nOx-aO-1Rh"/>
+                                </connections>
                             </slider>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oMs-Fh-gcb">
                                 <rect key="frame" x="109" y="432" width="157" height="29"/>
@@ -125,15 +134,24 @@
                                     <constraint firstAttribute="width" constant="157" id="aPa-W1-FZj"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Switches"/>
+                                    <segment title="Button"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="rIu-NU-yFX"/>
+                                </connections>
                             </segmentedControl>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wnM-yU-Wby">
                                 <rect key="frame" x="109" y="468" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchOneSync:" destination="BYZ-38-t0r" eventType="valueChanged" id="RHf-79-hl5"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F6s-fn-BS6">
                                 <rect key="frame" x="217" y="468" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchTwoSync:" destination="BYZ-38-t0r" eventType="valueChanged" id="BBt-QX-a15"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No name typed in yet." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FU8-ip-yFq">
                                 <rect key="frame" x="48" y="302" width="307" height="21"/>
@@ -144,6 +162,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tB-Cq-u0A">
+                                <rect key="frame" x="118" y="469" width="139" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="139" id="6VM-s4-nYD"/>
+                                    <constraint firstAttribute="height" constant="30" id="XMd-A4-QHT"/>
+                                </constraints>
+                                <state key="normal" title="Do something "/>
+                                <connections>
+                                    <action selector="doSomethingBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P6K-8m-qjm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -151,8 +180,10 @@
                             <constraint firstItem="Bjb-pU-JEJ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="8" id="4R1-ey-j6q"/>
                             <constraint firstItem="L62-15-2xd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Ael-sP-IIC"/>
                             <constraint firstItem="TcL-Wg-Iyy" firstAttribute="leading" secondItem="FU8-ip-yFq" secondAttribute="leading" constant="4" id="DzS-k2-McZ"/>
+                            <constraint firstItem="8tB-Cq-u0A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ezx-4e-cUg"/>
                             <constraint firstItem="wnM-yU-Wby" firstAttribute="top" secondItem="oMs-Fh-gcb" secondAttribute="bottom" constant="8" id="G71-V7-Cjh"/>
                             <constraint firstItem="0eU-wU-QYF" firstAttribute="centerX" secondItem="1Oc-qT-S2R" secondAttribute="centerX" id="Hfz-E1-D3w"/>
+                            <constraint firstItem="8tB-Cq-u0A" firstAttribute="top" secondItem="oMs-Fh-gcb" secondAttribute="bottom" constant="9" id="Hrx-mI-XmD"/>
                             <constraint firstItem="1TX-sx-aqR" firstAttribute="top" secondItem="P1V-O5-9zs" secondAttribute="bottom" constant="9" id="Iej-Of-06K"/>
                             <constraint firstItem="L62-15-2xd" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-206" id="IoL-pk-Mel"/>
                             <constraint firstItem="Bjb-pU-JEJ" firstAttribute="trailing" secondItem="P1V-O5-9zs" secondAttribute="trailing" id="Jbc-rI-bdk"/>
@@ -181,6 +212,18 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="doSomethingBtn" destination="8tB-Cq-u0A" id="Nfd-dj-vKV"/>
+                        <outlet property="mySeg" destination="oMs-Fh-gcb" id="f5c-Vw-IhX"/>
+                        <outlet property="nameLbl" destination="FU8-ip-yFq" id="0OS-zn-Y7i"/>
+                        <outlet property="nameTxt" destination="P1V-O5-9zs" id="09m-c1-uJC"/>
+                        <outlet property="numLbl" destination="TcL-Wg-Iyy" id="vky-o1-bYS"/>
+                        <outlet property="numTxt" destination="1TX-sx-aqR" id="Qsf-wf-Jdi"/>
+                        <outlet property="slideLbl" destination="1Oc-qT-S2R" id="kyj-Ol-DOe"/>
+                        <outlet property="slider" destination="0eU-wU-QYF" id="bZZ-Pc-j9O"/>
+                        <outlet property="switchOne" destination="wnM-yU-Wby" id="9Ea-j2-3kX"/>
+                        <outlet property="switchTwo" destination="F6s-fn-BS6" id="ETi-Xu-QRl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
