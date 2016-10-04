@@ -15,6 +15,7 @@ class CategoryTableViewController: UITableViewController {
     let searchController = UISearchController(searchResultsController: nil)
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +24,9 @@ class CategoryTableViewController: UITableViewController {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+        //let secondVC : MealTableViewController = .destinationViewController as! MealTableViewController
+        
+        //searchController.segueForUnwindingToViewController(MealTableViewController, fromViewController: self, identifier: <#T##String?#>)
         
         //load up the menu
         loadSampleCetegories()

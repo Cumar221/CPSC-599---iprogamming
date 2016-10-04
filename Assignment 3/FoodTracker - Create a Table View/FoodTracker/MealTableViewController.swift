@@ -27,8 +27,8 @@ class MealTableViewController: UITableViewController {
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
         
-        searchController.searchBar.scopeButtonTitles = ["All", "Breakfast", "Lunch", "Dinner", "Dessert"]
-        tableView.tableHeaderView = searchController.searchBar
+        //searchController.searchBar.scopeButtonTitles = ["All", "Breakfast", "Lunch", "Dinner", "Dessert"]
+        //tableView.tableHeaderView = searchController.searchBar
         
         
         let carrotCakePic = UIImage(named: "carrotCake")!
@@ -54,12 +54,11 @@ class MealTableViewController: UITableViewController {
         let pastaPic = UIImage(named: "pasta")!
         let pasta = Meal(name: "Pasta with Asparagusm", type: "Dinner" , photo: pastaPic, rating: 4)!
         
-        meals = [pancake, cereal, oatmeal,meal3,meal2,chickenSandwich, pizza,meal1, tacos, pasta,carrotCake]
-
+      
 
         // Load the sample data.
         if selectedMeal == "Breakfast"{
-                loadSampleBreakfast([pancake, cereal, oatmeal,meal3,meal2,chickenSandwich, pizza,meal1, tacos, pasta,carrotCake])
+                loadSampleBreakfast([pancake, cereal, oatmeal])
         }
         else if selectedMeal == "Lunch"{
                 loadSampleLunch([meal3,meal2,chickenSandwich, pizza])
@@ -73,17 +72,17 @@ class MealTableViewController: UITableViewController {
     }
     
     func loadSampleDessert(mealsInput: [Meal]){
-        //meals = mealsInput
+        meals = mealsInput
     }
     func loadSampleBreakfast(mealsInput: [Meal]){
-        //meals = mealsInput
+        meals = mealsInput
     }
     
     func loadSampleLunch(mealsInput: [Meal]){
-        //meals = mealsInput
+        meals = mealsInput
     }
     func loadSampleDinner(mealsInput: [Meal]){
-       // meals = mealsInput
+        meals = mealsInput
     }
     
     
@@ -126,11 +125,9 @@ class MealTableViewController: UITableViewController {
         
         return cell
     }
-    func filterContentForSearchText(searchText: String, scope: String = "All") {
+    func filterContentForSearchText(searchText: String) {
         filteredMeal = meals.filter({( mealX : Meal) -> Bool in
-            let categoryMatch = (scope == "All") || (mealX.type == scope)
-            return categoryMatch && mealX.name.lowercaseString.containsString(searchText.lowercaseString)
-        })
+            return mealX.name.lowercaseString.containsString(searchText.lowercaseString)        })
 
         tableView.reloadData()
     }
@@ -138,16 +135,9 @@ class MealTableViewController: UITableViewController {
 
 extension MealTableViewController: UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
-    }
-}
-
-extension MealTableViewController: UISearchBarDelegate {
-    // MARK: - UISearchBar Delegate
-    func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+        //let searchBar = searchController.searchBar
+        //let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchController.searchBar.text!)
     }
 }
 
