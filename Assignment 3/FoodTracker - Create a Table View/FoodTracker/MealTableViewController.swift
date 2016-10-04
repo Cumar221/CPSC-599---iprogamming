@@ -14,80 +14,80 @@ class MealTableViewController: UITableViewController {
     
     var meals = [Meal]()
     var selectedMeal: String = ""
+    var filteredMeal = [Meal]()
+    let searchController = UISearchController(searchResultsController: nil)
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //setup the search controller
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        
+        searchController.searchBar.scopeButtonTitles = ["All", "Breakfast", "Lunch", "Dinner", "Dessert"]
+        tableView.tableHeaderView = searchController.searchBar
+        
+        
+        let carrotCakePic = UIImage(named: "carrotCake")!
+        let carrotCake = Meal(name: "Carrot Cake", type: "Dessert", photo: carrotCakePic, rating: 5)!
+        let photo = UIImage(named: "pancake")!
+        let pancake = Meal(name: "Pancake, Eggs and Bacon", type: "Breakfast", photo: photo, rating: 5)!
+        let fruitLoop = UIImage(named: "fruitLoop")!
+        let cereal = Meal(name: "Fruit Loop Cereal", type: "Breakfast", photo: fruitLoop, rating: 5)!
+        let oats = UIImage(named: "oatmeal")!
+        let oatmeal = Meal(name: "Oatmeal", type: "Breakfast", photo: oats, rating: 5)!
+        let photo3 = UIImage(named: "meal3")!
+        let meal3 = Meal(name: "Pasta with Meatballs", type: "Lunch" , photo: photo3, rating: 3)!
+        let photo2 = UIImage(named: "meal2")!
+        let meal2 = Meal(name: "Chicken and Potatoes", type: "Lunch" , photo: photo2, rating: 5)!
+        let sandwich = UIImage(named: "sandwich")!
+        let chickenSandwich = Meal(name: "Chicken Sandwich",type: "Lunch" ,  photo: sandwich, rating: 5)!
+        let pizzaPic = UIImage(named: "pizza")!
+        let pizza = Meal(name: "Pepperoni Pizza", type: "Lunch" , photo: pizzaPic, rating: 5)!
+        let photo1 = UIImage(named: "meal1")!
+        let meal1 = Meal(name: "Caprese Salad", type: "Dinner" , photo: photo1, rating: 4)!
+        let tacosPic = UIImage(named: "tacos")!
+        let tacos = Meal(name: "Mexican Tacos", type: "Dinner" , photo: tacosPic, rating: 4)!
+        let pastaPic = UIImage(named: "pasta")!
+        let pasta = Meal(name: "Pasta with Asparagusm", type: "Dinner" , photo: pastaPic, rating: 4)!
+        
+        meals = [pancake, cereal, oatmeal,meal3,meal2,chickenSandwich, pizza,meal1, tacos, pasta,carrotCake]
+
 
         // Load the sample data.
         if selectedMeal == "Breakfast"{
-                loadSampleBreakfast()
+                loadSampleBreakfast([pancake, cereal, oatmeal,meal3,meal2,chickenSandwich, pizza,meal1, tacos, pasta,carrotCake])
         }
         else if selectedMeal == "Lunch"{
-                loadSampleLunch()
+                loadSampleLunch([meal3,meal2,chickenSandwich, pizza])
         }
         else if selectedMeal == "Dinner"{
-            loadSampleDinner()
+            loadSampleDinner([meal1, tacos, pasta])
         }
         else{
-            loadSampleDessert()
+            loadSampleDessert([carrotCake])
         }
     }
     
-    func loadSampleDessert(){
-        let carrotCakePic = UIImage(named: "carrotCake")!
-        let carrotCake = Meal(name: "Carrot Cake", photo: carrotCakePic, rating: 5)!
-        
-        meals += [carrotCake]
+    func loadSampleDessert(mealsInput: [Meal]){
+        //meals = mealsInput
     }
-    func loadSampleBreakfast(){
-        let photo = UIImage(named: "pancake")!
-        let pancake = Meal(name: "Pancake, Eggs and Bacon", photo: photo, rating: 5)!
-        let fruitLoop = UIImage(named: "fruitLoop")!
-        let cereal = Meal(name: "Fruit Loop Cereal", photo: fruitLoop, rating: 5)!
-        let oats = UIImage(named: "oatmeal")!
-        let oatmeal = Meal(name: "Oatmeal", photo: oats, rating: 5)!
-        
-        meals += [pancake, cereal, oatmeal]
+    func loadSampleBreakfast(mealsInput: [Meal]){
+        //meals = mealsInput
     }
     
-    func loadSampleLunch(){
-        let photo3 = UIImage(named: "meal3")!
-        let meal3 = Meal(name: "Pasta with Meatballs", photo: photo3, rating: 3)!
-        let photo2 = UIImage(named: "meal2")!
-        let meal2 = Meal(name: "Chicken and Potatoes", photo: photo2, rating: 5)!
-        let sandwich = UIImage(named: "sandwich")!
-        let chickenSandwich = Meal(name: "Chicken Sandwich", photo: sandwich, rating: 5)!
-        let pizzaPic = UIImage(named: "pizza")!
-        let pizza = Meal(name: "Pepperoni Pizza", photo: pizzaPic, rating: 5)!
-        
-        
-        meals += [meal3,meal2,chickenSandwich, pizza]
+    func loadSampleLunch(mealsInput: [Meal]){
+        //meals = mealsInput
     }
-    func loadSampleDinner(){
-        
-        let photo1 = UIImage(named: "meal1")!
-        let meal1 = Meal(name: "Caprese Salad", photo: photo1, rating: 4)!
-        let tacosPic = UIImage(named: "tacos")!
-        let tacos = Meal(name: "Mexican Tacos", photo: tacosPic, rating: 4)!
-        let pastaPic = UIImage(named: "pasta")!
-        let pasta = Meal(name: "Pasta with Asparagusm", photo: pastaPic, rating: 4)!
-        
-        meals += [meal1, tacos, pasta]
+    func loadSampleDinner(mealsInput: [Meal]){
+       // meals = mealsInput
     }
     
-    func loadSampleMeals() {
-        let photo1 = UIImage(named: "meal1")!
-        let meal1 = Meal(name: "Caprese Salad", photo: photo1, rating: 4)!
-        
-        let photo2 = UIImage(named: "meal2")!
-        let meal2 = Meal(name: "Chicken and Potatoes", photo: photo2, rating: 5)!
-        
-        let photo3 = UIImage(named: "meal3")!
-        let meal3 = Meal(name: "Pasta with Meatballs", photo: photo3, rating: 3)!
-        
-        meals += [meal1, meal2, meal3]
-    }
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -100,67 +100,54 @@ class MealTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.active && searchController.searchBar.text != "" {
+            return filteredMeal.count
+        }
         return meals.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "MealTableViewCell"
+        let mealSearch : Meal
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MealTableViewCell
         
-        // Fetches the appropriate meal for the data source layout.
-        let meal = meals[indexPath.row]
+       
+        if searchController.active && searchController.searchBar.text != "" {
+            mealSearch = filteredMeal[indexPath.row]
+        } else {
+            mealSearch = meals[indexPath.row]
+        }
         
-        cell.nameLabel.text = meal.name
-        cell.photoImageView.image = meal.photo
-        cell.ratingControl.rating = meal.rating
+        
+        cell.nameLabel.text = mealSearch.name
+        cell.photoImageView.image = mealSearch.photo
+        cell.ratingControl.rating = mealSearch.rating
         
         return cell
     }
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        filteredMeal = meals.filter({( mealX : Meal) -> Bool in
+            let categoryMatch = (scope == "All") || (mealX.type == scope)
+            return categoryMatch && mealX.name.lowercaseString.containsString(searchText.lowercaseString)
+        })
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+        tableView.reloadData()
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension MealTableViewController: UISearchResultsUpdating {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+    }
+}
+
+extension MealTableViewController: UISearchBarDelegate {
+    // MARK: - UISearchBar Delegate
+    func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+    }
+}
+

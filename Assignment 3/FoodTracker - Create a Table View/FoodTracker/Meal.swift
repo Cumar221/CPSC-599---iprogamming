@@ -13,14 +13,16 @@ class Meal {
     // MARK: Properties
     
     var name: String
+    var type: String
     var photo: UIImage?
     var rating: Int
 
     // MARK: Initialization
     
-    init?(name: String, photo: UIImage?, rating: Int) {
+    init?(name: String, type:String,  photo: UIImage?, rating: Int) {
         // Initialize stored properties.
         self.name = name
+        self.type = type
         self.photo = photo
         self.rating = rating
         
