@@ -1,0 +1,328 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		872BF0251DD41090007AC329 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872BF0241DD41090007AC329 /* Spotify.framework */; settings = {ASSET_TAGS = (); }; };
+		F6AA40761DD2C7F400790E95 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6AA40751DD2C7F400790E95 /* Spotify.framework */; settings = {ASSET_TAGS = (); }; };
+		F6AA407A1DD2C93100790E95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE45831DD1686E0087BC7F /* AppDelegate.swift */; };
+		F6AA407B1DD2C93100790E95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE45851DD1686E0087BC7F /* ViewController.swift */; };
+		F6AA40851DD2CC7300790E95 /* login-button-mobile.png in Resources */ = {isa = PBXBuildFile; fileRef = F6AA40841DD2CC7300790E95 /* login-button-mobile.png */; settings = {ASSET_TAGS = (); }; };
+		F6EE45891DD1686E0087BC7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EE45871DD1686E0087BC7F /* Main.storyboard */; };
+		F6EE458B1DD1686F0087BC7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6EE458A1DD1686F0087BC7F /* Assets.xcassets */; };
+		F6EE458E1DD1686F0087BC7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EE458C1DD1686F0087BC7F /* LaunchScreen.storyboard */; };
+		F6EE45981DD16AE50087BC7F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6EE45971DD16AE50087BC7F /* AVFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		872BF0241DD41090007AC329 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
+		F6AA40751DD2C7F400790E95 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spotify.framework; path = "/Users/UC\\cumar.yusuf/Desktop/Spotify/Spotify.framework"; sourceTree = "<absolute>"; };
+		F6AA407E1DD2C9C100790E95 /* Spotify-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spotify-Bridging-Header.h"; sourceTree = "<group>"; };
+		F6AA40841DD2CC7300790E95 /* login-button-mobile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-mobile.png"; sourceTree = "<group>"; };
+		F6EE45801DD1686E0087BC7F /* Spotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6EE45831DD1686E0087BC7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F6EE45851DD1686E0087BC7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F6EE45881DD1686E0087BC7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F6EE458A1DD1686F0087BC7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F6EE458D1DD1686F0087BC7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F6EE458F1DD1686F0087BC7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6EE45971DD16AE50087BC7F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F6EE457D1DD1686E0087BC7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6EE45981DD16AE50087BC7F /* AVFoundation.framework in Frameworks */,
+				872BF0251DD41090007AC329 /* Spotify.framework in Frameworks */,
+				F6AA40761DD2C7F400790E95 /* Spotify.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F6EE45771DD1686E0087BC7F = {
+			isa = PBXGroup;
+			children = (
+				F6EE45971DD16AE50087BC7F /* AVFoundation.framework */,
+				F6EE45821DD1686E0087BC7F /* Spotify */,
+				F6EE45811DD1686E0087BC7F /* Products */,
+				F6AA407E1DD2C9C100790E95 /* Spotify-Bridging-Header.h */,
+			);
+			sourceTree = "<group>";
+		};
+		F6EE45811DD1686E0087BC7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F6EE45801DD1686E0087BC7F /* Spotify.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F6EE45821DD1686E0087BC7F /* Spotify */ = {
+			isa = PBXGroup;
+			children = (
+				872BF0241DD41090007AC329 /* Spotify.framework */,
+				F6EE45831DD1686E0087BC7F /* AppDelegate.swift */,
+				F6EE45851DD1686E0087BC7F /* ViewController.swift */,
+				F6EE45871DD1686E0087BC7F /* Main.storyboard */,
+				F6EE458A1DD1686F0087BC7F /* Assets.xcassets */,
+				F6AA40841DD2CC7300790E95 /* login-button-mobile.png */,
+				F6EE458C1DD1686F0087BC7F /* LaunchScreen.storyboard */,
+				F6EE458F1DD1686F0087BC7F /* Info.plist */,
+			);
+			path = Spotify;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F6EE457F1DD1686E0087BC7F /* Spotify */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6EE45921DD1686F0087BC7F /* Build configuration list for PBXNativeTarget "Spotify" */;
+			buildPhases = (
+				F6EE457C1DD1686E0087BC7F /* Sources */,
+				F6EE457D1DD1686E0087BC7F /* Frameworks */,
+				F6EE457E1DD1686E0087BC7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Spotify;
+			productName = Spotify;
+			productReference = F6EE45801DD1686E0087BC7F /* Spotify.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F6EE45781DD1686E0087BC7F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Cumar Yusuf";
+				TargetAttributes = {
+					F6EE457F1DD1686E0087BC7F = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = F6EE457B1DD1686E0087BC7F /* Build configuration list for PBXProject "Spotify" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F6EE45771DD1686E0087BC7F;
+			productRefGroup = F6EE45811DD1686E0087BC7F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F6EE457F1DD1686E0087BC7F /* Spotify */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F6EE457E1DD1686E0087BC7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6EE458E1DD1686F0087BC7F /* LaunchScreen.storyboard in Resources */,
+				F6AA40851DD2CC7300790E95 /* login-button-mobile.png in Resources */,
+				F6EE458B1DD1686F0087BC7F /* Assets.xcassets in Resources */,
+				F6EE45891DD1686E0087BC7F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F6EE457C1DD1686E0087BC7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6AA407A1DD2C93100790E95 /* AppDelegate.swift in Sources */,
+				F6AA407B1DD2C93100790E95 /* ViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F6EE45871DD1686E0087BC7F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6EE45881DD1686E0087BC7F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F6EE458C1DD1686F0087BC7F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6EE458D1DD1686F0087BC7F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F6EE45901DD1686F0087BC7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F6EE45911DD1686F0087BC7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F6EE45931DD1686F0087BC7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Spotify",
+				);
+				INFOPLIST_FILE = Spotify/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cy-spotify";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Spotify-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F6EE45941DD1686F0087BC7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Spotify",
+				);
+				INFOPLIST_FILE = Spotify/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cy-spotify";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Spotify-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F6EE457B1DD1686E0087BC7F /* Build configuration list for PBXProject "Spotify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6EE45901DD1686F0087BC7F /* Debug */,
+				F6EE45911DD1686F0087BC7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6EE45921DD1686F0087BC7F /* Build configuration list for PBXNativeTarget "Spotify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6EE45931DD1686F0087BC7F /* Debug */,
+				F6EE45941DD1686F0087BC7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F6EE45781DD1686E0087BC7F /* Project object */;
+}
