@@ -14,6 +14,9 @@
 		F69182F71DDD36F40016CD2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F69182F51DDD36F40016CD2C /* Main.storyboard */; };
 		F69182F91DDD36F40016CD2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F69182F81DDD36F40016CD2C /* Assets.xcassets */; };
 		F69182FC1DDD36F40016CD2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F69182FA1DDD36F40016CD2C /* LaunchScreen.storyboard */; };
+		F6CC93E71DDE9A290057280F /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = F6CC93E51DDE9A290057280F /* MyParticle.sks */; settings = {ASSET_TAGS = (); }; };
+		F6CC93E81DDE9A290057280F /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = F6CC93E61DDE9A290057280F /* spark.png */; settings = {ASSET_TAGS = (); }; };
+		F6CC93EA1DDEAE5C0057280F /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = F6CC93E91DDEAE5C0057280F /* explosion.sks */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		F69182F81DDD36F40016CD2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F69182FB1DDD36F40016CD2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F69182FD1DDD36F40016CD2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6CC93E51DDE9A290057280F /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		F6CC93E61DDE9A290057280F /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		F6CC93E91DDEAE5C0057280F /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosion.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +67,10 @@
 				F69182ED1DDD36F40016CD2C /* AppDelegate.swift */,
 				F69182EF1DDD36F40016CD2C /* GameScene.sks */,
 				F69182F11DDD36F40016CD2C /* GameScene.swift */,
+				F6CC93E91DDEAE5C0057280F /* explosion.sks */,
 				F69182F31DDD36F40016CD2C /* GameViewController.swift */,
+				F6CC93E51DDE9A290057280F /* MyParticle.sks */,
+				F6CC93E61DDE9A290057280F /* spark.png */,
 				F69182F51DDD36F40016CD2C /* Main.storyboard */,
 				F69182F81DDD36F40016CD2C /* Assets.xcassets */,
 				F69182FA1DDD36F40016CD2C /* LaunchScreen.storyboard */,
@@ -128,9 +137,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F69182F01DDD36F40016CD2C /* GameScene.sks in Resources */,
+				F6CC93E81DDE9A290057280F /* spark.png in Resources */,
 				F69182FC1DDD36F40016CD2C /* LaunchScreen.storyboard in Resources */,
 				F69182F91DDD36F40016CD2C /* Assets.xcassets in Resources */,
+				F6CC93EA1DDEAE5C0057280F /* explosion.sks in Resources */,
 				F69182F71DDD36F40016CD2C /* Main.storyboard in Resources */,
+				F6CC93E71DDE9A290057280F /* MyParticle.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +303,7 @@
 				F69183021DDD36F40016CD2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

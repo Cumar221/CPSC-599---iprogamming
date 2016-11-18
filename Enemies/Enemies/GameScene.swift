@@ -12,53 +12,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let enemy = SKSpriteNode(imageNamed: "Spaceship")
     var lastTouch: CGPoint? = nil
     var isTouched: Bool = false
-    var sprites:[SKSpriteNode] = []
+    var sprites = [SKSpriteNode]()
+    var timer = NSTimer()
     
     override func didMoveToView(view: SKView) {
         
         self.physicsWorld.contactDelegate = self
+        timer = NSTimer.scheduledTimerWithTimeInterval(2, target:self, selector: Selector("reloadEnemy"), userInfo: nil, repeats: true)
         
+        super.didMoveToView(view)
+        self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
         
-        
-        
-        
+        enemy.physicsBody = SKPhysicsBody(rectangleOfSize: enemy.size);
         enemy.size.height = self.size.height/15
-        enemy.size.width = self.size.width/18
+        enemy.size.width = self.size.width/10
         backgroundColor = SKColor.blackColor()
         enemy.position = CGPoint(x: size.width/2, y: size.height/2)
-       
-        
+        enemy.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
+        enemy.physicsBody?.affectedByGravity = false
+    
+        enemy.physicsBody?.friction = 1
         addChild(enemy)
         
     }
     
-    private func spritesCollection(count count: Int) -> [SKSpriteNode] {
-        var sprites = [SKSpriteNode]()
-        for _ in 0..<count {
-            var sprite = SKSpriteNode(imageNamed: "Spaceship")
-            // skipping the physicsBody stuff for now as it is not part of the question
-            
-            // giving the sprites a random position
-            sprite.size.height = self.size.height/15
-            sprite.size.width = self.size.width/18
-            sprite.zRotation = CGFloat(M_PI)
-            //let xPos = randomBetweenNumbers(0, secondNum: frame.width - 1000 )
-            
-            //let x = CGFloat(arc4random() % UInt32((self.frame.width)))
-            //let y = CGFloat(arc4random() % UInt32((self.frame.height)))
-            
-            
-            let x = CGFloat(arc4random() % UInt32((self.frame.width)))
-            //let y = CGFloat(arc4random_uniform(UInt32(size.height/2)))
-            sprite.position = CGPointMake(x, size.height)
-            sprites.append(sprite)
-        }
-        return sprites
-    }
     
-    func randomBetweenNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat{
-        return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
-    }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
@@ -79,15 +57,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let rotateAction = SKAction.rotateToAngle(angle + CGFloat(M_PI*0.5), duration: 0.0)
         
 
-    
+        
         
         print("Began touch")
         isTouched = true
     
-        for sprite in sprites{
-            //sprite.runAction(moveEnemyAction)
-           
-        }
+       
+
+    
        //enemy.runAction(moveAction)
        //enemy.runAction(rotateAction)
        
@@ -96,7 +73,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if isTouched{
             
-            reloadEnemy()
             
             let touchLocation = touches.first?.locationInNode(self)
             let previousLocation = touches.first?.previousLocationInNode(self)
@@ -112,32 +88,94 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             enemyY = min(size.height - enemy.size.height/2,enemyY)
             
             enemy.position = CGPoint(x: enemyX, y: enemyY)
+            
         }
+        
+       
     }
     
     func reloadEnemy(){
-        sprites = spritesCollection(count: 10)
-        for sprite in sprites {
-           
-                        sprite.physicsBody = SKPhysicsBody()
-            sprite.physicsBody?.affectedByGravity = true;
-            physicsWorld.gravity = CGVectorMake(0, -0.5)
-            
-            addChild(sprite)
-            
-        }
-        //print(physicsWorld.)
-
+        var sprite = SKSpriteNode(imageNamed: "Spaceship")
+        // skipping the physicsBody stuff for now as it is not part of the question
         
+        // giving the sprites a random position
+        sprite.size.height = self.size.height/15
+        sprite.size.width = self.size.width/10
+        sprite.zRotation = CGFloat(M_PI)
+        let x = CGFloat(arc4random() % UInt32((self.size.width)))
+        
+        sprite.position = CGPointMake(x, self.frame.size.height)
+        
+        sprite.physicsBody = SKPhysicsBody()
+        sprite.physicsBody?.affectedByGravity = false;
+        physicsWorld.gravity = CGVectorMake(0, -0.5)
+        
+        sprites.append(sprite)
+        addChild(sprite)
+        
+        fireBall(sprite.position)
+        
+        print("INNN \(sprites.count)")
+        
+    }
+    
+    func random() -> UInt32{
+        var range = UInt32(0)...UInt32(size.width)
+        return range.startIndex + arc4random_uniform(range.endIndex - range.startIndex + 1)
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         isTouched = false
     }
-
+    
+    func rotateEnemy(){
+        for sprite in sprites{
+            let touchPosition = enemy.position
+            let currentPosition = sprite.position
+            let angle = atan2(currentPosition.y - touchPosition.y, currentPosition.x - touchPosition.x)
+            let rotateAction = SKAction.rotateToAngle(angle + CGFloat(M_PI*0.5), duration: 0.0)
+            sprite.runAction(rotateAction)
+        }
+    }
    
-    override func update(currentTime: CFTimeInterval) {
+    func followEnemy(){
+        for sprite in sprites{
+            let moveEnemyToPlayer = SKAction.moveTo(enemy.position, duration: 5)
+            let moveEnemyDown = SKAction.moveToY(CGFloat(-1000), duration: 10)
+            sprite.runAction(moveEnemyToPlayer)
+           sprite.runAction(moveEnemyDown)
+            
+        }
+    }
+    
+    
+    func fireBall(pos: CGPoint){
+        var fireBallParticle = SKEmitterNode(fileNamed: "MyParticle")
         
+        fireBallParticle!.position = pos
+        fireBallParticle!.name = "rainParticle"
+        fireBallParticle!.targetNode = self.scene
+        
+        
+        fireBallParticle!.physicsBody = SKPhysicsBody()
+        fireBallParticle!.physicsBody?.affectedByGravity = true
+        
+        addChild(fireBallParticle!)
+
+      
+        
+        let moveToPlayer = SKAction.moveTo(enemy.position, duration: 2)
+
+        
+        
+        fireBallParticle?.runAction(moveToPlayer)
        
+       
+        
+    }
+    override func update(currentTime: CFTimeInterval) {
+        followEnemy()
+        rotateEnemy()
+        
     }
 }
